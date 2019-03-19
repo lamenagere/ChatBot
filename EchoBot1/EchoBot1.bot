@@ -1,0 +1,38 @@
+﻿{
+  "name": "EchoBot1",
+  "services": [
+
+
+    {
+      "type": "endpoint",
+      "appId": "de14b331-46b9-4749-be64-dbaaedfd19fe",
+      "appPassword": "gmwkNBBRV1@ijcOB3253*^!",
+      "endpoint": "https://echobot120190318034148.azurewebsites.net/api/messages",
+      "id": "26",
+      "name": "production"
+
+
+    },
+
+    {
+      "type": "endpoint",
+      "name": "development",
+      "endpoint": "http://localhost:3978/api/messages",
+      "appId": "",
+      "appPassword": "",
+      "id": "1"
+    },
+
+    {
+      "type": "qna",
+      "endpointKey": "e59e9ac2-3659-472d-8c91-c4b9a3c4b76f",
+      "hostname": "https://bxlformationsampletest.azurewebsites.net/qnamaker",
+      "id": "117",
+      "kbId": "be45242a-a661-4529-bc6e-94cf93725906",
+      "name": "QnABot",
+      "subscriptionKey": ""
+    }
+  ],
+  "padlock": "",
+  "version": "2.0"
+}
