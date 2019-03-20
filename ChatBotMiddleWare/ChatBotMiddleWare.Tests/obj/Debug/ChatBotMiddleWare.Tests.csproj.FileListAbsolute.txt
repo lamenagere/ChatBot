@@ -1,0 +1,2 @@
+C:\Users\WD09-Toshley\source\repos\ChatBotMiddleWare\ChatBotMiddleWare.Tests\obj\Debug\ChatBotMiddleWare.Tests.csprojAssemblyReference.cache
+C:\Users\WD09-Toshley\source\repos\ChatBotMiddleWare\ChatBotMiddleWare.Tests\obj\Debug\ChatBotMiddleWare.Tests.csproj.CoreCompileInputs.cache
