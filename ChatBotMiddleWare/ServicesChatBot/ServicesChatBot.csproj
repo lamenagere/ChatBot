@@ -70,6 +70,10 @@
       <Project>{51990898-2B1F-43FC-BA5A-4BE1D2B4F377}</Project>
       <Name>ChatBotMiddleWare</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{4bd56404-2481-4a32-99f6-2ac77a4d78ad}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
