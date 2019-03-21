@@ -8,9 +8,11 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ChatBotMiddleWare.Controllers
-{
+{   
+    [EnableCors("*", "*", "*")]
     [RoutePrefix("api/values")]
     public class ValuesController : ApiController
     {
@@ -38,22 +40,40 @@ namespace ChatBotMiddleWare.Controllers
         public IHttpActionResult PostMessage(QuestionModel question)
         {
             var client = new DirectLineClient(directLineSecret);
-
-            var converastion = System.Web.HttpContext.Current.Session["conversation"] as Conversation;
+            //var conversationInfo = client.Conversations.StartConversation();
+            var conversation = System.Web.HttpContext.Current.Session["conversation"] as Conversation;
+            Activity msg;
 
             Activity message = new Activity
             {
                 From = new ChannelAccount("Toto42"),
-                Text = question.question,
+                Text = question.text,
                 Type = ActivityTypes.Message
             };
 
-        
-            var res = client.Conversations.PostActivity(converastion.ConversationId, message);
+            try
+            {
 
-            var msg = client.Conversations.GetActivities(question.conversationId).Activities.Last();
-            
-            return Ok(msg);
+                if (conversation == null) conversation = client.Conversations.StartConversation();
+                var res = client.Conversations.PostActivity(question.conversationId, message);
+                msg = client.Conversations.GetActivities(question.conversationId).Activities.Last();
+
+                
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+
+            var answer = new AnswerModel()
+            {
+                conversationId = msg.Conversation.Id,
+                images = null,
+                text = msg.Text
+            };
+
+            System.Web.HttpContext.Current.Session["conversation"] = conversation;
+            return Ok(answer);
         }
 
         //public async Task<bool> PostMessage(QuestionModel question)

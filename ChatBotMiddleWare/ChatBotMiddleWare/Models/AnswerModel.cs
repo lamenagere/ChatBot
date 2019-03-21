@@ -8,6 +8,9 @@ namespace ChatBotMiddleWare.Models
     public class AnswerModel
     {
 
-        public string answer { get; set; }
+        public string text { get; set; }
+        public string[] images { get; set; }
+        public string conversationId { get; set; }
+
     }
 }
