@@ -4,11 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatBotMiddleWare", "ChatBotMiddleWare\ChatBotMiddleWare.csproj", "{51990898-2B1F-43FC-BA5A-4BE1D2B4F377}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4BD56404-2481-4A32-99F6-2AC77A4D78AD} = {4BD56404-2481-4A32-99F6-2AC77A4D78AD}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicesChatBot", "ServicesChatBot\ServicesChatBot.csproj", "{24565043-3E4C-4703-9D0E-A22C45BEE2A3}"
 	ProjectSection(ProjectDependencies) = postProject
 		{51990898-2B1F-43FC-BA5A-4BE1D2B4F377} = {51990898-2B1F-43FC-BA5A-4BE1D2B4F377}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{4BD56404-2481-4A32-99F6-2AC77A4D78AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +29,10 @@ Global
 		{24565043-3E4C-4703-9D0E-A22C45BEE2A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24565043-3E4C-4703-9D0E-A22C45BEE2A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24565043-3E4C-4703-9D0E-A22C45BEE2A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BD56404-2481-4A32-99F6-2AC77A4D78AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BD56404-2481-4A32-99F6-2AC77A4D78AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BD56404-2481-4A32-99F6-2AC77A4D78AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BD56404-2481-4A32-99F6-2AC77A4D78AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
