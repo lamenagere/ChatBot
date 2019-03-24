@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace ChatBotMiddleWare
+namespace ChatBotAPI
 {
     public class FilterConfig
     {

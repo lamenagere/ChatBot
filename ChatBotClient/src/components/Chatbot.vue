@@ -78,7 +78,8 @@ export default {
       isFullScreen: false,
       isWaiting: false,
       conversationStarted: false,
-      conversationId: ""
+      conversationId: "",
+      apiUrl: 'http://localhost:57220/'
     };
   },
     created(){
@@ -91,7 +92,7 @@ export default {
     startConversation() {
       if (!this.conversationStarted) {
         this.conversationStarted = true;
-        axios.post("https://chatbotmwla5.azurewebsites.net/api/values/start")
+        axios.post(this.apiUrl + "/api/values/start")
         .then(response => {
           this.conversationId = response.data;
 
@@ -129,7 +130,7 @@ export default {
       /* eslint-disable no-console */
       // console.log(this.request);
       /* eslint-enable no-console */
-        axios.post("https://chatbotmwla5.azurewebsites.net/api/values/message", this.request)
+        axios.post(this.apiUrl + "api/values/message", this.request)
         .then(response => {
           setTimeout(() =>{
             this.isWaiting = false;
