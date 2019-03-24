@@ -79,6 +79,7 @@ export default {
       isWaiting: false,
       conversationStarted: false,
       conversationId: "",
+      userId: "1",
       apiUrl: 'http://localhost:57220/'
     };
   },
@@ -89,27 +90,37 @@ export default {
     Bubble
   },
   methods: {
+
     startConversation() {
       if (!this.conversationStarted) {
         this.conversationStarted = true;
         axios.post(this.apiUrl + "/api/values/start")
         .then(response => {
           this.conversationId = response.data;
+          console.log(response);
 
-      })
+      });
       }
     },
+
+
     activate() {
       this.startConversation();
       this.isActive = !this.isActive;
     },
+
+
     toggleFullscreen() {
       this.isFullScreen = !this.isFullScreen;
     },
+
+
   	scrollToEnd() {   	
       var container = this.$el.querySelector("#container");
       container.scrollTop = container.scrollHeight;
     },
+
+
     sendQuestion() {
       if (this.text != "") {
       /* eslint-disable no-console */
@@ -118,11 +129,13 @@ export default {
         let question = {
           text: this.text,
           type: "question",
-          images: []
+          userId: "1"
         };
         this.chatlog.push(question);
         this.request.conversationId = this.conversationId;
         this.request.text = this.text;
+        this.request.userId = this.userId;
+        this.request.type = "message";
         this.$nextTick(()=>{
           this.scrollToEnd();
         })
@@ -138,7 +151,8 @@ export default {
             let answer = {
               text: response.data.text,
               type: "answer",
-              images:response.data.images
+              images:response.data.images,
+              userId: response.data.userId
             };
             this.chatlog.push(answer);
             this.scrollToEnd();

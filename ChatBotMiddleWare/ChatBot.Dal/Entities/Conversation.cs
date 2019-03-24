@@ -8,7 +8,8 @@ namespace ChatBot.Dal.Entities
 {
     public class Conversation
     {
-        public int Id { get; set; }
+        public string ConversationId { get; set; }
+
         public virtual ICollection<Activity> Activities { get; set; }
     }
 }

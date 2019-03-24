@@ -65,5 +65,11 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChatBot.Dal\ChatBot.Dal.csproj">
+      <Project>{e3a68d7f-cba2-45ae-9f2a-1b6edb5c4460}</Project>
+      <Name>ChatBot.Dal</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

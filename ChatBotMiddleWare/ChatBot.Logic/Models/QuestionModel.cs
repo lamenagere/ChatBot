@@ -11,5 +11,6 @@ namespace ChatBot.Logic.Models
         public string text { get; set; }
         public string[] images { get; set; }
         public string conversationId { get; set; }
+        public string userId { get; set; }
     }
 }
